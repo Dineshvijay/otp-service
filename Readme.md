@@ -6,10 +6,10 @@
 ### Working Process
 
 - Client calls **generateOTP endpoint** and passing the mobile number as payload. The otp service will internally calls the 3rd party sms provider and sends the OTP code to client's mobile number.
-- Once, the OTP code is sent. We will be upset the otp code & mobile number to redis and sending session id as response to client
-- Client calls the **verifyOTP endpoint** with OTP code and session id in the payload.
-- Passing the session id key and fetch the data from redis.
-- Validate the client's otp code & redis stored otp.
+- Once, the OTP code is sent. It will upset the otp code & mobile number to redis and sending OTP_id as a response to the client
+- Client calls the **verifyOTP endpoint** and passing OTP code and OTP_id in the payload.
+- Passing the OTP_id as a key and fetch the data from redis.
+- Validate the client's otp code & redis stored otp code.
 - Send response to client 
 
 ### Prerequisite
